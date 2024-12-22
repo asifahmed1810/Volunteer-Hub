@@ -80,18 +80,7 @@ const Register = () => {
                                     required
                                 />
                             </div>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Photo-Url</span>
-                                </label>
-                                <input
-                                    type="text"
-                                    placeholder="url"
-                                    name="photo"
-                                    className="input input-bordered"
-                                    required
-                                />
-                            </div>
+                            
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
@@ -104,6 +93,20 @@ const Register = () => {
                                     required
                                 />
                             </div>
+
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Photo-Url</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    placeholder="url"
+                                    name="photo"
+                                    className="input input-bordered"
+                                    required
+                                />
+                            </div>
+                            
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Password</span>
@@ -129,7 +132,7 @@ const Register = () => {
                             <p className="text-center pb-3">
                                 Already Have an account?
                                 <Link
-                                    to={'/auth/login'}
+                                    to={'/signin'}
                                     className="text-xl font-semibold ml-1 text-red-500"
                                 >
                                     Login
