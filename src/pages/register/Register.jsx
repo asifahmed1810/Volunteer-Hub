@@ -1,10 +1,13 @@
 import React, { useContext } from 'react';
 
 import { Link } from 'react-router-dom';
+import AuthContext from '../../context/AuthContext/AuthContext';
+import Swal from 'sweetalert2';
 // import Swal from 'sweetalert2';
 
 const Register = () => {
     // const { createUser, setUser } = useContext(AuthContext);
+    const {createUser,setUser}=useContext(AuthContext);
 
     const handleSignUp = (e) => {
         e.preventDefault();
@@ -106,7 +109,7 @@ const Register = () => {
                                     required
                                 />
                             </div>
-                            
+
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Password</span>

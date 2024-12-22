@@ -1,10 +1,38 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import AuthContext from '../../context/AuthContext/AuthContext';
+import Swal from 'sweetalert2';
 
 
 const Login = () => {
-   
-  
+
+    const navigate = useNavigate();
+
+    const {userLogin, setUser} = useContext(AuthContext);
+ 
+    const handleLogIn = (e) => {
+        e.preventDefault();
+
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+
+        userLogin(email, password)
+            .then(result => {
+                const user = result.user;
+                setUser(user);
+                navigate('/');
+            })
+            .catch(error => {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Invalid email or password. Please try again.',
+
+                })
+            })
+
+    }
+
     return (
         <div>
             <div className="hero bg-base-200 min-h-screen mt-10">
@@ -13,7 +41,7 @@ const Login = () => {
                         <h1 className="text-5xl font-bold">Login now!</h1>
                     </div>
                     <div className="card bg-base-100 w-full mt-5 max-w-sm shrink-0 shadow-2xl">
-                        <form  className="card-body">
+                        <form onSubmit={handleLogIn} className="card-body">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
@@ -48,7 +76,7 @@ const Login = () => {
 
                                 <div className="pb-4 ">
                                     <button
-                                       
+
                                         className="btn w-full btn-ghost mt-2 border border-black"
                                     >
                                         Google
