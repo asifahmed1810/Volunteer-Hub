@@ -8,8 +8,8 @@ const Login = () => {
 
     const navigate = useNavigate();
 
-    const {userLogin, setUser} = useContext(AuthContext);
- 
+    const { userLogin, setUser,signInWithGoogle } = useContext(AuthContext);
+
     const handleLogIn = (e) => {
         e.preventDefault();
 
@@ -32,6 +32,21 @@ const Login = () => {
             })
 
     }
+
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+            .then((result) => {
+                navigate("/");
+            })
+            .catch((error) => {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Google sign-in failed. Please try again.',
+                });
+            });
+    };
 
     return (
         <div>
@@ -76,7 +91,7 @@ const Login = () => {
 
                                 <div className="pb-4 ">
                                     <button
-
+                                        onClick={handleGoogleSignIn}
                                         className="btn w-full btn-ghost mt-2 border border-black"
                                     >
                                         Google
