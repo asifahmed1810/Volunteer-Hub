@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const VolunteerCard = ({ volunteer }) => {
-    const { thumbnail, postTitle, category, location,
+    const {_id, thumbnail, postTitle, category, location,
         deadlineDate } = volunteer;
 
     return (
@@ -18,7 +19,7 @@ const VolunteerCard = ({ volunteer }) => {
                 <p className='font-semibold'>Location: {location}</p>
                 <p className='font-semibold'>Deadline: {deadlineDate}</p>
                 <div className="card-actions justify-center ">
-                    <button className="btn btn-neutral">Be a Volunteer</button>
+                    <Link to={`/volunteerDetails/${_id}`}><button className="btn btn-neutral">Details</button></Link>
                 </div>
             </div>
         </div>
