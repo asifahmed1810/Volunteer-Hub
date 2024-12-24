@@ -2,10 +2,11 @@ import React, { useContext, useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import AuthContext from '../../context/AuthContext/AuthContext';
+import Swal from 'sweetalert2';
 
 const AddVolunteer = () => {
     const [deadline, setDeadline] = useState(null);
-    const{user}=useContext(AuthContext);
+    const{user,setLoading}=useContext(AuthContext);
 
     const handleSubmit=(e)=>{
         e.preventDefault();
@@ -21,7 +22,46 @@ const AddVolunteer = () => {
 
         const newVolunteer = { thumbnail, title, description, category, location, numOfvolunteer, deadlineDate, email };
 
-        console.log(newVolunteer)
+        setLoading(true);
+        fetch('http://localhost:5000/addvolunteer',{
+            method:'POST',
+            headers:{
+                'Content-Type':'application/json',
+            },
+            body:JSON.stringify(newVolunteer),
+        })
+
+        .then((res)=>res.json())
+        .then((data)=>{
+            setLoading(false);
+            if (data.insertedId){
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Volunteer need post Added Successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Cool',
+                });
+                e.target.reset();    
+            }else{
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'Failed to add . Please try again.',
+                    icon: 'error',
+                    confirmButtonText: 'Ok',
+                }); 
+            }
+        })
+        .catch((error)=>{
+            setLoading(false);
+            Swal.fire({
+                title: 'Error!',
+                text: 'An error occurred while adding the volunteer.',
+                icon: 'error',
+                confirmButtonText: 'Ok',
+            });
+            console.error(error);
+
+        })
     }
 
     return (
