@@ -40,3 +40,14 @@
 .read-the-docs {
   color: #888;
 }
+
+[data-theme='dark'] {
+  --tw-bg-opacity: 1;
+  background-color: #1e293b;
+  color: #e2e8f0;
+}
+[data-theme='light'] {
+  --tw-bg-opacity: 1;
+  background-color: #ffffff;
+  color: #1f2937;
+}

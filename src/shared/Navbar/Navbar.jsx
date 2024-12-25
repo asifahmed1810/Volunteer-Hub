@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import AuthContext from '../../context/AuthContext/AuthContext';
+import { FiMoon, FiSun } from 'react-icons/fi';
 
 const Navbar = () => {
-    const { user, logOut } = useContext(AuthContext);
+    const { user, logOut, isDarkTheme, toggleTheme } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const handleLogout = () => {
@@ -21,7 +22,7 @@ const Navbar = () => {
     );
 
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-200 rounded-lg">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -53,7 +54,10 @@ const Navbar = () => {
                     {links}
                 </ul>
             </div>
-            <div className="navbar-end">
+            <div className="navbar-end flex items-center gap-4">
+                <button onClick={toggleTheme} className="btn btn-ghost">
+                    {isDarkTheme ? <FiSun className="text-lg" /> : <FiMoon className="text-lg" />}
+                </button>
                 {!user ? (
                     <Link to={'/signin'}>
                         <button className="btn btn-neutral">Login</button>
