@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import AuthContext from '../../context/AuthContext/AuthContext';
 import Swal from 'sweetalert2';
 // import Swal from 'sweetalert2';
@@ -8,6 +8,7 @@ import Swal from 'sweetalert2';
 const Register = () => {
     // const { createUser, setUser } = useContext(AuthContext);
     const {createUser,setUser}=useContext(AuthContext);
+    const navigate=useNavigate();
 
     const handleSignUp = (e) => {
         e.preventDefault();
@@ -45,6 +46,7 @@ const Register = () => {
                 user.displayName = name;
                 user.photoURL = photo;
                 setUser(user);
+                navigate('/')
 
                 Swal.fire({
                     icon: 'success',
@@ -52,6 +54,7 @@ const Register = () => {
                     text: 'Your account has been created successfully.',
                     confirmButtonText: 'OK',
                 });
+                
             })
             .catch((error) => {
                 Swal.fire({
