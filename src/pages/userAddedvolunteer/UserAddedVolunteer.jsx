@@ -1,19 +1,33 @@
 import React, { useContext, useEffect, useState } from 'react';
 import AuthContext from '../../context/AuthContext/AuthContext';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const UserAddedVolunteer = () => {
     const { user } = useContext(AuthContext);
     const [volunteers, setVolunteers] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/useraddedvolunteer?email=${user.email}`)
-                .then((res) => res.json())
-                .then((data) => setVolunteers(data))
-                .catch((error) => console.error('Error fetching user-added volunteers:', error));
+            axios
+                .get(`http://localhost:5000/useraddedvolunteer?email=${user.email}`, { withCredentials: true })
+                .then((res) => {
+                    if (Array.isArray(res.data)) {
+                        setVolunteers(res.data);
+                    } else {
+                        console.error('Expected an array but got:', res.data);
+                        setVolunteers([]);
+                    }
+                })
+                .catch((error) => console.error('Error fetching user-added volunteers:', error))
+                .finally(() => setLoading(false));
         }
     }, [user]);
+
+    if (loading) {
+        return <p className="text-center">Loading...</p>;
+    }
 
     return (
         <div className="w-11/12 mx-auto my-10">
