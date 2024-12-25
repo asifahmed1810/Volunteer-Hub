@@ -57,7 +57,7 @@ const VolunteerModal = ({ volunteer, closeModal }) => {
     };
     
     return (
-        <div className="modal modal-open">
+        <div className="modal modal-open ">
             <div className="modal-box">
                 <h3 className="font-bold text-lg">{volunteer.title}</h3>
                 <p className="py-2">{volunteer.description}</p>

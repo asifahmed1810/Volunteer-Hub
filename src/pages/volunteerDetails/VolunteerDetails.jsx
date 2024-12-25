@@ -15,7 +15,7 @@ const VolunteerDetails = () => {
     };
 
     return (
-        <div className='w-3/4 mx-auto'>
+        <div className='w-3/4 mx-auto mb-10'>
             <div className="card bg-base-100 shadow-xl mt-10">
                 <figure>
                     <img className='h-96 w-96 mx-auto' src={volunteer.thumbnail} alt={volunteer.title} />
