@@ -72,7 +72,7 @@ const Navbar = () => {
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow space-y-2">
                             <li><NavLink to={'/myvolunteerneedpost'} className={'font-semibold'}>My Volunteer Need Post</NavLink></li>
-                            <li><NavLink to={'/manageposts'} className={'font-semibold'}>Manage My Posts</NavLink></li>
+                            <li><NavLink to={'/myvolunteerrequestpost'} className={'font-semibold'}>Manage My Posts</NavLink></li>
                             <li><button onClick={handleLogout} className="btn btn-neutral">Logout</button></li>
                         </ul>
                     </div>

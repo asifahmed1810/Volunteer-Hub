@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import AuthContext from '../../context/AuthContext/AuthContext';
 import Swal from 'sweetalert2';
+import axios from 'axios';
 
 
 const Login = () => {
@@ -20,9 +21,20 @@ const Login = () => {
 
         userLogin(email, password)
             .then(result => {
-                const user = result.user;
+                // const user = result.user;
+               
+                const user={email:result.user.email}
+                // console.log('sign in', result.user.email)
+                // setUser(user);
+                // axios.post('http://localhost:5000/jwt',user,{withCredentials:true})
+                // .then(res=>{
+                //     console.log(res.data)
+                //        navigate(from);
+                // })
                 setUser(user);
                 navigate(from);
+                
+             
             })
             .catch(error => {
                 Swal.fire({

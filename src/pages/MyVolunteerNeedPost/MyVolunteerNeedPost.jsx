@@ -2,20 +2,23 @@ import React, { useContext, useEffect, useState } from 'react';
 import AuthContext from '../../context/AuthContext/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import axios from 'axios';
 
 const MyVolunteerNeedPost = () => {
     const { user } = useContext(AuthContext);
     const [volunteers, setVolunteers] = useState([]);
-    const navigate=useNavigate();
+    const navigate = useNavigate();
 
     useEffect(() => {
-        if (user) {
-            fetch(`http://localhost:5000/useraddedvolunteer?email=${user.email}`)
-                .then((res) => res.json())
-                .then((data) => setVolunteers(data))
+        // if (user) {
+            // fetch(`http://localhost:5000/useraddedvolunteer?email=${user.email}`)
+            //     .then((res) => res.json())
+            //     .then((data) => setVolunteers(data))
+            axios.get(`http://localhost:5000/useraddedvolunteer?email=${user.email}`, { withCredentials: true })
+                .then(res=>console.log(setVolunteers(res.data)))
                 .catch((error) => Swal.fire('Error', 'Error fetching user-added volunteers', 'error'));
-        }
-    }, [user]);
+        // }
+    }, [user.email]);
 
     // Handle delete action
     const handleDelete = (id) => {
@@ -34,7 +37,7 @@ const MyVolunteerNeedPost = () => {
                 })
                     .then((res) => res.json())
                     .then((data) => {
-                        if (data.deletedCount >0) {
+                        if (data.deletedCount > 0) {
                             setVolunteers(volunteers.filter((volunteer) => volunteer._id !== id));
                             Swal.fire('Deleted!', 'Your post has been deleted.', 'success');
                         } else {
@@ -75,9 +78,9 @@ const MyVolunteerNeedPost = () => {
                                         <td className="border px-4 py-2">{volunteer.category}</td>
                                         <td className="border px-4 py-2 flex justify-center space-x-2">
                                             {/* Update Button */}
-                                           
-                                                <button onClick={()=>handleUpdate(volunteer._id)} className="btn btn-primary btn-sm">Update</button>
-                                          
+
+                                            <button onClick={() => handleUpdate(volunteer._id)} className="btn btn-primary btn-sm">Update</button>
+
 
                                             {/* Delete Button */}
                                             <button
