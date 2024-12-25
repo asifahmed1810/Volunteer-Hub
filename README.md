@@ -1,8 +1,13 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Project name: VolunteerHub
 
-Currently, two official plugins are available:
+# Purpose: 
+The purpose of VolunteerHub is to connect volunteers with organizers for various events and activities. The platform enables organizers to post events requiring volunteers, while users can browse and sign up for these opportunities. The platform aims to streamline the volunteering process and foster community engagement.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Live site link:
+
+# key features:
+User Authentication , Volunteer Posts , Volunteer Sign-Up , Theme Toggling , User Dashboard , Responsive Design , Error Handling
+
+# NPM Packages Used:
+React Router DOM , Axios , SweetAlert2 (Swal) , Firebase , Tailwind CSS , react-icons , Dotenv 
