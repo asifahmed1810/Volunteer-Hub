@@ -11,6 +11,7 @@ import AddVolunteer from '../pages/addVolunteer/addVolunteer';
 import AllVolunteers from '../pages/AllVolunteer/AllVolunteers';
 import VolunteerDetails from '../pages/volunteerDetails/VolunteerDetails';
 import PrivateRoute from './PrivateRoute';
+import UserAddedVolunteer from '../pages/userAddedvolunteer/UserAddedVolunteer';
 
 
 const router = createBrowserRouter([
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
           path:'volunteerDetails/:id',
           element:<PrivateRoute><VolunteerDetails></VolunteerDetails></PrivateRoute>,
           loader:({params})=>fetch(`http://localhost:5000/allvolunteer/${params.id}`)
+        },
+        {
+          path:'useraddedvolunteer',
+          element:<PrivateRoute><UserAddedVolunteer></UserAddedVolunteer></PrivateRoute>
         },
         {
           path:'signin',
