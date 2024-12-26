@@ -30,7 +30,7 @@ const router = createBrowserRouter([
         {
           path:'/allvolunteer',
           element:<AllVolunteers></AllVolunteers>,
-          // loader:({params})=>fetch(`http://localhost:5000/allvolunteer/${params.id}`)
+         
         },
         {
           path:'volunteerDetails/:id',

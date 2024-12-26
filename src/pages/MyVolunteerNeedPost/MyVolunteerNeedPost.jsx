@@ -15,7 +15,7 @@ const MyVolunteerNeedPost = () => {
             //     .then((res) => res.json())
             //     .then((data) => setVolunteers(data))
             axios.get(`http://localhost:5000/useraddedvolunteer?email=${user.email}`, { withCredentials: true })
-                .then(res=>console.log(setVolunteers(res.data)))
+                .then(res=>setVolunteers(res.data))
                 .catch((error) => Swal.fire('Error', 'Error fetching user-added volunteers', 'error'));
         // }
     }, [user.email]);

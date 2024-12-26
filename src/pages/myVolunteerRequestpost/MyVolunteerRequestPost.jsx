@@ -19,7 +19,7 @@ const MyVolunteerRequestPost = () => {
                     { withCredentials: true } // Include credentials if needed
                 );
                 setRequests(response.data); // Update state with the fetched data
-                console.log("Fetched Requests:", response.data); // Debugging output
+                // console.log("Fetched Requests:", response.data); // Debugging output
             } catch (error) {
                 console.error("Error fetching volunteer requests:", error); // Log errors for debugging
                 Swal.fire("Error", "Error fetching volunteer requests", "error"); // User-friendly error alert
@@ -36,7 +36,7 @@ const MyVolunteerRequestPost = () => {
 
     // Handle cancellation of a volunteer request
     const handleCancel = (id) => {
-        console.log("Deleting request with ID:", id); // Log the ID to make sure it's correct
+        // console.log("Deleting request with ID:", id); // Log the ID to make sure it's correct
 
         Swal.fire({
             title: "Are you sure?",

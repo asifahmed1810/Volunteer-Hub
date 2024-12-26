@@ -16,7 +16,7 @@ const VolunteerModal = ({ volunteer, closeModal }) => {
             suggestion,
         };
     
-        console.log('Request Data:', requestData); // Debugging
+        // console.log('Request Data:', requestData); // Debugging
     
         try {
             const response = await fetch('http://localhost:5000/requestvolunteer', {
