@@ -26,7 +26,7 @@ const Login = () => {
                 const user={email:result.user.email}
                 // console.log('sign in', result.user.email)
                 // setUser(user);
-                // axios.post('http://localhost:5000/jwt',user,{withCredentials:true})
+                // axios.post('https://volunteer-hub-server-ten.vercel.app/jwt',user,{withCredentials:true})
                 // .then(res=>{
                 //     console.log(res.data)
                 //        navigate(from);

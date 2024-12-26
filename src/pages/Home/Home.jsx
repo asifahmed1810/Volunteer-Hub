@@ -8,7 +8,7 @@ const Home = () => {
     // Fetch volunteers from the server
     const fetchVolunteers = async () => {
         try {
-            const response = await fetch('http://localhost:5000/allvolunteer');
+            const response = await fetch('https://volunteer-hub-server-ten.vercel.app/allvolunteer');
             const data = await response.json();
             setVolunteers(data); // Update the volunteers state
         } catch (error) {

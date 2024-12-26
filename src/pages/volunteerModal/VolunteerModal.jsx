@@ -19,7 +19,7 @@ const VolunteerModal = ({ volunteer, closeModal }) => {
         // console.log('Request Data:', requestData); // Debugging
     
         try {
-            const response = await fetch('http://localhost:5000/requestvolunteer', {
+            const response = await fetch('https://volunteer-hub-server-ten.vercel.app/requestvolunteer', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(requestData),

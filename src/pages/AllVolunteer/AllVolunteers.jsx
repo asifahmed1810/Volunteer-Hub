@@ -10,7 +10,7 @@ const AllVolunteers = () => {
     // Fetch volunteers based on the search term
     const fetchVolunteers = async () => {
         try {
-            const response = await fetch(`http://localhost:5000/allvolunteer?title=${searchTerm}`);
+            const response = await fetch(`https://volunteer-hub-server-ten.vercel.app/allvolunteer?title=${searchTerm}`);
             const data = await response.json();
             setVolunteers(data); // Update the volunteers state
         } catch (error) {

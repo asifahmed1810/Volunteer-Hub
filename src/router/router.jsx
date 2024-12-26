@@ -35,7 +35,7 @@ const router = createBrowserRouter([
         {
           path:'volunteerDetails/:id',
           element:<PrivateRoute><VolunteerDetails></VolunteerDetails></PrivateRoute>,
-          loader:({params})=>fetch(`http://localhost:5000/allvolunteer/${params.id}`)
+          loader:({params})=>fetch(`https://volunteer-hub-server-ten.vercel.app/allvolunteer/${params.id}`)
         },
         {
           path:'useraddedvolunteer',
@@ -50,7 +50,7 @@ const router = createBrowserRouter([
           element:
             <UpdateVolunteerneedPost></UpdateVolunteerneedPost>
          ,
-          loader:({params})=>fetch(`http://localhost:5000/useraddedvolunteer/${params.id}`)
+          loader:({params})=>fetch(`https://volunteer-hub-server-ten.vercel.app/useraddedvolunteer/${params.id}`)
 
         },
         {

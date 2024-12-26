@@ -11,7 +11,7 @@ const UserAddedVolunteer = () => {
     useEffect(() => {
         if (user) {
             axios
-                .get(`http://localhost:5000/useraddedvolunteer?email=${user.email}`, { withCredentials: true })
+                .get(`https://volunteer-hub-server-ten.vercel.app/useraddedvolunteer?email=${user.email}`, { withCredentials: true })
                 .then((res) => {
                     if (Array.isArray(res.data)) {
                         setVolunteers(res.data);

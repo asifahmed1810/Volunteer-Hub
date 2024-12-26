@@ -23,7 +23,7 @@ const AddVolunteer = () => {
         const newVolunteer = { thumbnail, title, description, category, location, numOfvolunteer, deadlineDate, email };
 
         setLoading(true);
-        fetch('http://localhost:5000/addvolunteer',{
+        fetch('https://volunteer-hub-server-ten.vercel.app/addvolunteer',{
             method:'POST',
             headers:{
                 'Content-Type':'application/json',
