@@ -15,6 +15,7 @@ import UserAddedVolunteer from '../pages/userAddedvolunteer/UserAddedVolunteer';
 import MyVolunteerNeedPost from '../pages/MyVolunteerNeedPost/MyVolunteerNeedPost';
 import UpdateVolunteerneedPost from '../pages/updateVolunteerneedPost/UpdateVolunteerneedPost';
 import MyVolunteerRequestPost from '../pages/myVolunteerRequestpost/MyVolunteerRequestPost';
+import ErrorPage from '../pages/Errorpage/ErrorPage';
 
 
 const router = createBrowserRouter([
@@ -71,6 +72,10 @@ const router = createBrowserRouter([
         }
     ]
   },
+  {
+    path:'*',
+    element:<ErrorPage></ErrorPage>
+  }
 ]);
 
 export default router;
