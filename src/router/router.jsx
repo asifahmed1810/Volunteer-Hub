@@ -16,6 +16,7 @@ import MyVolunteerNeedPost from '../pages/MyVolunteerNeedPost/MyVolunteerNeedPos
 import UpdateVolunteerneedPost from '../pages/updateVolunteerneedPost/UpdateVolunteerneedPost';
 import MyVolunteerRequestPost from '../pages/myVolunteerRequestpost/MyVolunteerRequestPost';
 import ErrorPage from '../pages/Errorpage/ErrorPage';
+import AboutUs from '../pages/AboutUs/AboutUs';
 
 
 const router = createBrowserRouter([
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
           path:'/allvolunteer',
           element:<AllVolunteers></AllVolunteers>,
          
+        },
+        {
+          path:'aboutus',
+          element:<AboutUs></AboutUs>
         },
         {
           path:'volunteerDetails/:id',
