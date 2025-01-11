@@ -86,7 +86,7 @@ const MyVolunteerRequestPost = () => {
     }
 
     return (
-        <div className="lg:w-3/4 mx-auto my-10">
+        <div className="lg:w-3/4 mt-20 mx-auto my-10">
             <h1 className="text-3xl font-bold text-center mb-5">My Volunteer Requests</h1>
             <div className="overflow-x-auto">
                 <table className="table table-zebra w-full">
