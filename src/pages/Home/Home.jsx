@@ -21,9 +21,9 @@ const Home = () => {
     }, []);
 
     return (
-        <div>
+        <div className='mt-20'>
             <h2 className='font-bold text-4xl mt-5 mb-5'>Its Time to show your huminity</h2>
-            <p className='text-lg mt-5 mb-5'>Volunteering is a selfless way to contribute to the community by offering time and skills to causes that make a difference. It fosters personal growth, builds connections, and creates a positive impact on both individuals and society.</p>
+            <p className='text-lg mt-5 mb-12'>Volunteering is a selfless way to contribute to the community by offering time and skills to causes that make a difference. It fosters personal growth, builds connections, and creates a positive impact on both individuals and society.</p>
             <Banner />
 
             {/* Volunteer Grid */}

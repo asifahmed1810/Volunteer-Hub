@@ -30,7 +30,7 @@ const UserAddedVolunteer = () => {
     }
 
     return (
-        <div className="w-11/12 mx-auto my-10">
+        <div className="w-11/12 mx-auto mt-20 my-10">
             <h1 className="text-2xl font-bold text-center mb-8">My Added Posts</h1>
 
             {volunteers.length === 0 ? (

@@ -66,7 +66,7 @@ const Register = () => {
     };
 
     return (
-        <div>
+        <div >
             <div className="hero bg-base-200 min-h-screen mt-10">
                 <div className="hero-content flex-col">
                     <div className="text-center lg:text-left">

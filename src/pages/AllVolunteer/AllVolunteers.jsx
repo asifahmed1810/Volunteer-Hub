@@ -28,7 +28,7 @@ const AllVolunteers = () => {
     };
 
     return (
-        <div>
+        <div className='mt-20'>
             <div className="flex justify-between my-5">
                 <input
                     type="text"
