@@ -22,8 +22,8 @@ const Navbar = () => {
     );
 
     return (
-        <div className="navbar bg-base-200 rounded-lg">
-            <div className="navbar-start">
+        <div className="navbar bg-base-200  rounded-lg">
+            <div className="navbar-start mx-4">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                         <svg
@@ -49,12 +49,12 @@ const Navbar = () => {
                     <span className="btn btn-neutral text-xl">volunteerHub</span>
                 </Link>
             </div>
-            <div className="navbar-center hidden lg:flex">
+            <div className="navbar-center mx-4 hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 font-semibold">
                     {links}
                 </ul>
             </div>
-            <div className="navbar-end flex items-center gap-4">
+            <div className="navbar-end mx-4 flex items-center gap-4">
                 <button onClick={toggleTheme} className="btn btn-ghost">
                     {isDarkTheme ? <FiSun className="text-lg" /> : <FiMoon className="text-lg" />}
                 </button>
