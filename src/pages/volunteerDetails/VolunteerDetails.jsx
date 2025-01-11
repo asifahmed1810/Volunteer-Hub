@@ -20,8 +20,8 @@ const VolunteerDetails = () => {
                 <figure>
                     <img className='h-96 w-96 mx-auto' src={volunteer.thumbnail} alt={volunteer.title} />
                 </figure>
-                <div className="card-body">
-                    <h2 className="card-title">{volunteer.title}</h2>
+                <div className="card-body ">
+                    <h2 className="card-title ">{volunteer.title}</h2>
                     <p><span className='font-semibold'>Description:</span> {volunteer.description}</p>
                     <p><span className='font-semibold'>Category:</span> {volunteer.category}</p>
                     <p><span className='font-semibold'>Location:</span> {volunteer.location}</p>

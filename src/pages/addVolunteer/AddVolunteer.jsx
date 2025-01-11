@@ -155,6 +155,7 @@ const AddVolunteer = () => {
                                 <span className="label-text font-semibold">Organizer email</span>
                             </label>
                             <input
+                                readOnly
                                 type="text"
                                 name="email"
                                 defaultValue={user && user.email}

@@ -46,7 +46,7 @@ const AllVolunteers = () => {
             </div>
     
             {/* Conditional Layout Rendering */}
-            <div className={isGridLayout ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10 mb-10" : "overflow-x-auto"}>
+            <div className={isGridLayout ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-10 mb-10" : "overflow-x-auto"}>
                 {volunteers.length === 0 ? (
                     <p className="text-center">No results found</p> // Show this if no results
                 ) : isGridLayout ? (
