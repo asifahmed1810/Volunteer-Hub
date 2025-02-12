@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const VolunteerCard = ({ volunteer }) => {
     const {_id, thumbnail, title, category, location,
-        deadlineDate } = volunteer;
+        deadlineDate,numOfvolunteer } = volunteer;
 
     return (
         <div className="card card-compact bg-base-100  shadow-xl">
@@ -18,6 +18,7 @@ const VolunteerCard = ({ volunteer }) => {
                 {/* <p className='font-semibold'>Category: {category}</p> */}
                 <p className='font-semibold'>Location: {location}</p>
                 <p className='font-semibold'>Deadline: {deadlineDate}</p>
+                <p className='font-semibold'>Volunteers Needed: {numOfvolunteer}</p>
                 <div className="card-actions justify-center ">
                     <Link to={`/volunteerDetails/${_id}`}><button className="btn btn-neutral">Details</button></Link>
                 </div>
