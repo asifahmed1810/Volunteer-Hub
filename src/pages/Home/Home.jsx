@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Banner from '../../shared/Banner/Banner';
 import VolunteerCard from '../volunteercard/VolunteerCard'; // Import the VolunteerCard
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     const [volunteers, setVolunteers] = useState([]);
@@ -20,6 +21,13 @@ const Home = () => {
         fetchVolunteers();
     }, []);
 
+  
+    const popularVolunteer = volunteers
+        .sort((a, b) => b.numOfvolunteer - a.numOfvolunteer)
+        .slice(0, 6);
+
+
+
     return (
         <div className='mt-20'>
             <h2 className='font-bold text-4xl mt-5 mb-5'>Its Time to show your huminity</h2>
@@ -31,11 +39,15 @@ const Home = () => {
                 {volunteers.length === 0 ? (
                     <p className="text-center">No results found</p> // Show this if no results
                 ) : (
-                    volunteers.map((volunteer) => (
+                    popularVolunteer.map((volunteer) => (
                         <VolunteerCard key={volunteer._id} volunteer={volunteer} />
                     ))
                 )}
             </div>
+            <div className='mb-10'>
+                <Link to={'/allvolunteer'}><button className='btn btn-neutral'>See All</button></Link>
+            </div>
+
 
             <div className='mb-10'>
                 <div className="collapse collapse-arrow bg-base-200">
