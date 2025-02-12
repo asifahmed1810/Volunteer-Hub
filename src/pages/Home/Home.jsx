@@ -27,7 +27,7 @@ const Home = () => {
             <Banner />
 
             {/* Volunteer Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-10 mb-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10 mb-10">
                 {volunteers.length === 0 ? (
                     <p className="text-center">No results found</p> // Show this if no results
                 ) : (
